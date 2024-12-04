@@ -13,13 +13,14 @@ body{
 .header h3{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: italic;
+    font-weight: lighter;
 }
 .navigation{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: rgb(38, 38, 38);
-    height: 6vh;
+    height: 7vh;
 }
 
 
