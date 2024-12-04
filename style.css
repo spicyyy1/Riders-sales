@@ -1,8 +1,19 @@
+body{
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+}
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: orange;
-    margin: 0;
+    padding-left: 1%;
+    padding-right: 1%;
 }
+.header h3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+
+
 
