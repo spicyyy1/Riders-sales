@@ -1,0 +1,54 @@
+body, h1, h2, h3 .p{
+    margin: 0;
+    padding: 2;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
+    background: url(Aback.jpg) no-repeat fixed center; 
+    background-size: cover;
+    line-height: 1.6;
+}
+.main-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    background: rgba(black, black, black, black);
+}
+
+header{
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.hyper-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hyper-section h2 {
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+.hyper-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+foote{
+    
+}
