@@ -5,6 +5,12 @@ let passwordMsg = document.getElementById("passwordMsg");
 let dobMsg = document.getElementById("dobMsg");
 let registerButton = document.getElementById("registerBtn");
 
+let firstnameRegex = /^[A-Z][a-z]{15}$/;
+
+const validateFirstName = (firstname) => {
+    return firstnameRegex.test(firstname);
+}
+
 registerButton.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -18,7 +24,16 @@ registerButton.addEventListener("click", (event) => {
         firstNameMsg.style.color="red";
         firstNameMsg.style.fontStyle="italic";
         firstNameMsg.textContent="First Name is required!"
+    } 
+    if(!validateFirstName(firstname)){
+        firstNameMsg.style.color="red";
+        firstNameMsg.style.fontStyle="italic";
+        firstNameMsg.textContent="First letter must be capitalized!"    
+    }else {
+        firstNameMsg.textContent="";
+        window.location="index.html";  
     }
+
     if(lastname == ""){
         lastNameMsg.style.color="red";
         lastNameMsg.style.fontStyle="italic";
