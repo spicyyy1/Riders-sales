@@ -24,16 +24,17 @@ registerButton.addEventListener("click", (event) => {
         firstNameMsg.style.color="red";
         firstNameMsg.style.fontStyle="italic";
         firstNameMsg.textContent="First Name is required!"
-    } 
-    if(!validateFirstName(firstname)){
-        firstNameMsg.style.color="red";
-        firstNameMsg.style.fontStyle="italic";
-        firstNameMsg.textContent="First letter must be capitalized!"    
-    }else {
-        firstNameMsg.textContent="";
-        window.location="index.html";  
+    } else{
+        if(validateUsername(username)){
+            usernameMsg.textContent="";
+            window.location="home.html";
+        }else{
+            usernameMsg.style.color="red";
+            usernameMsg.style.fontStyle="italic";
+            usernameMsg.textContent="Username is .......";
+        }
     }
-
+    
     if(lastname == ""){
         lastNameMsg.style.color="red";
         lastNameMsg.style.fontStyle="italic";
