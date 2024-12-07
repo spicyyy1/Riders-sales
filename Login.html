@@ -6,7 +6,7 @@
     <title>LogIn</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loginbody">
     <div class="header">
         <a href="index.html">
             <img src="Screenshot_2024-12-04_193852-removebg-preview.png" alt="Logo" height="60vh" width="100%">
@@ -19,6 +19,80 @@
         <a href="About.html">About Us</a>
         <a href="Register.html">Register</a>
         <a href="Login.html">Login</a>
+    </div>
+    <div>
+        <form class="login" method="post">
+            <label for="username">Email</label>
+            <input type="email" name="username" id="username">
+            <label id="usernameMsg"></label><br>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <label id="passwordMsg"></label><br>
+
+            <input type="submit" value="Login" id="loginBtn">
+        </form>
+        
+        <script>
+            let usernameMsg = document.getElementById("usernameMsg");
+            let passwordMsg = document.getElementById("passwordMsg");
+            let loginBtn = document.getElementById("loginBtn");
+
+            function validateEmail(username) {
+                const usernameRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return usernameRegex.test(username);
+            }
+            
+            function validatePassword(password) {
+                let passwordRegex = /^[A-Z][a-zA-Z0-9!@#$%^&*(),.?":{}|<>_+\-=]{7,19}$/;
+                return passwordRegex.test(password);
+            }
+
+            loginBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                let username = document.getElementById("username").value.trim();
+                let password = document.getElementById("password").value.trim();
+
+                // usernameMsg.textContent = "";
+                // passwordMsg.textContent = "";
+
+                if(!username){
+                    usernameMsg.style.color="red";
+                    usernameMsg.style.fontStyle="italic";
+                    usernameMsg.textContent="Email is required!";
+                    return;
+                }
+                
+                if(!validateEmail(username)){
+                        usernameMsg.style.color="red";
+                        usernameMsg.style.fontStyle="italic";
+                        usernameMsg.textContent="Email is in the wrong format!";
+                        return;
+                }
+
+                if(!password){
+                    passwordMsg.style.color="red";
+                    passwordMsg.style.fontStyle="italic";
+                    passwordMsg.textContent="Password is required!";
+                    return;
+                }
+
+                if(!validatePassword(password)){
+                    passwordMsg.style.color="red";
+                    passwordMsg.style.fontStyle="italic";
+                    passwordMsg.textContent="Password is in the wrong format!";
+                    return;
+                }  
+                
+                if(validateEmail(email) && validatePassword(password)){
+                    usernameMsg.textContent="";
+                    passwordRegex.textContent="";
+                    window.location="index.html";
+                }
+            });
+        </script>
+
     </div>
 </body>
 </html>

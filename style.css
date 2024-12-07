@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 1);
 }
 .header{
     display: flex;
@@ -43,6 +43,20 @@ body{
     height: 300px;
     justify-content: flex-start;
     
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    padding: 5%;
+    margin: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    width: auto;
+    height: auto;
+    margin-top: 8%;
 }
 
 
