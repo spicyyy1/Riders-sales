@@ -50,6 +50,40 @@
             <input type="submit" value="Register" id="registerBtn">
         </form>
     </div>
-    <script src="jscript.js"></script>
+    <script>
+        let firstNameMsg = document.getElementById("firstNameMsg");
+        let lastNameMsg = document.getElementById("lastNameMsg");
+        let emailMsg = document.getElementById("emailMsg");
+        let passwordMsg = document.getElementById("passwordMsg");
+        let dobMsg = document.getElementById("dobMsg");
+        let registerBtn = document.getElementById("registerBtn");
+
+        function validateFirstName(firstname){
+            const firstnameRegex = /^[A-Z][a-z]{15}$/;
+            return firstnameRegex.test(firstname);
+        }
+
+        function validateLastName(lastname){
+            const lastnameRegex = /^[A-Z][a-z]{15}$/;
+            return lastnameRegex.test(lastname);
+        }
+
+        function validateEmail(email){
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePassword(password) {
+            let passwordRegex = /^[A-Z][a-zA-Z0-9!@#$%^&*(),.?":{}|<>_+\-=]{7,19}$/;
+            return passwordRegex.test(password);
+        }
+
+        function validateDob(dob){
+            const dobRegex = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+            return dobRegex.test(dob);
+        }
+
+    </script>
+    <!-- <script src="jscript.js"></script> -->
 </body>
 </html>
