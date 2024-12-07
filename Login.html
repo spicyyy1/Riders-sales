@@ -54,40 +54,32 @@
                 let username = document.getElementById("username").value.trim();
                 let password = document.getElementById("password").value.trim();
 
-                // usernameMsg.textContent = "";
-                // passwordMsg.textContent = "";
+                usernameMsg.textContent = "";
+                passwordMsg.textContent = "";
 
                 if(!username){
                     usernameMsg.style.color="red";
                     usernameMsg.style.fontStyle="italic";
                     usernameMsg.textContent="Email is required!";
-                    return;
-                }
-                
-                if(!validateEmail(username)){
+                } else if(!validateEmail(username)){
                         usernameMsg.style.color="red";
                         usernameMsg.style.fontStyle="italic";
                         usernameMsg.textContent="Email is in the wrong format!";
-                        return;
                 }
 
                 if(!password){
                     passwordMsg.style.color="red";
                     passwordMsg.style.fontStyle="italic";
                     passwordMsg.textContent="Password is required!";
-                    return;
-                }
-
-                if(!validatePassword(password)){
+                } else if(!validatePassword(password)){
                     passwordMsg.style.color="red";
                     passwordMsg.style.fontStyle="italic";
                     passwordMsg.textContent="Password is in the wrong format!";
-                    return;
                 }  
                 
-                if(validateEmail(email) && validatePassword(password)){
+                if(validateEmail(username) && validatePassword(password)){
                     usernameMsg.textContent="";
-                    passwordRegex.textContent="";
+                    passwordMsg.textContent="";
                     window.location="index.html";
                 }
             });
