@@ -20,8 +20,39 @@
         <a href="Register.html">Register</a>
         <a href="Login.html">Login</a>
     </div>
-    <div class="background">
+    <!-- <div class="background">
         <img src="pixlr-image-generator-9ffabfc1-d100-4ed1-b34e-14d391107dda.png" alt="Supercars" width="">
+    </div> -->
+    <div class="slideImages-container">
+        <div class="silde fade">
+            <img src="pixlr-image-generator-9ffabfc1-d100-4ed1-b34e-14d391107dda.png" alt="supercars" id="firstImage">
+        </div>
+        <div class="slide fade">
+            <img src="audi.logor8.jpg" alt="supercars" id="secondImage">
+        </div>
+        <div class="slide fade">
+            <img src="Aback.jpg" alt="supercars" id="thirdImage">
+        </div>
     </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        let image1 = document.getElementById("firstImage");
+        let image2 = document.getElementById("secondImage");
+        let image3 = document.getElementById("thirdImage");
+
+        image1.addEventListener("click", () => {
+            image1.src="pixlr-image-generator-9ffabfc1-d100-4ed1-b34e-14d391107dda.png";
+        });
+
+        image2.addEventListener("click", () => {
+            image2.src="Aback.jpg";
+        });
+
+        image3.addEventListener("click", () => {
+            image3.src="audi.logor8.jpg";
+        });
+    </script>
 </body>
 </html>
