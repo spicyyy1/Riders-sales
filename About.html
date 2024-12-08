@@ -21,6 +21,37 @@
         <a href="Login.html">Login</a>
     </div>
 
+    <div>
+        <form class="feedbackform" method="post">
+            <label for="firstname">Frist Name:</label>
+            <input type="text" name="firstname" id="firstname">
+            <label id="firstNameMsg"></label>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" id="lastname">
+            <label id="lastNameMsg"></label>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <label id="emailMsg"></label>
+
+            <label for="review">Review:</label>
+            <input type="text" name="review" id="review">
+            <label id="reviewMsg"></label>
+
+            <label for="rating">Rating:</label>
+            <select name="rating" id="rating">
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select><br>
+
+            <input type="submit" value="Submit" id="submitBtn">
+        </form>
+    </div>
+
     <footer>
         <div class="container-footer">
             <p>&copy; 2024 Riders Showroom. All rights reserved.</p>
