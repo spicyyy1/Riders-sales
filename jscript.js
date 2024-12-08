@@ -39,9 +39,6 @@ registerBtn.addEventListener("click", function(event) {
     let password = document.getElementById("password").value.trim();
     let dob = document.getElementById("dob").value.trim();
 
-    console.log(firstname);
-    console.log(lastname);
-
     firstNameMsg.textContent = "";
     lastNameMsg.textContent = "";
     emailMsg.textContent = "";
@@ -107,4 +104,3 @@ registerBtn.addEventListener("click", function(event) {
         window.location="index.html";
     }
 });
-

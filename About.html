@@ -24,20 +24,20 @@
     <div>
         <form class="feedbackform" method="post">
             <label for="firstname">Frist Name:</label>
-            <input type="text" name="firstname" id="firstname">
-            <label id="firstNameMsg"></label>
+            <input type="text" name="firstname" id="firstnameAbt">
+            <label id="firstNameMsgAbt"></label>
 
             <label for="lastname">Last Name:</label>
-            <input type="text" name="lastname" id="lastname">
-            <label id="lastNameMsg"></label>
+            <input type="text" name="lastname" id="lastnameAbt">
+            <label id="lastNameMsgAbt"></label>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
-            <label id="emailMsg"></label>
+            <input type="email" name="email" id="emailAbt">
+            <label id="emailMsgAbt"></label>
 
             <label for="review">Review:</label>
-            <input type="text" name="review" id="review">
-            <label id="reviewMsg"></label>
+            <input type="text" name="review" id="reviewAbt">
+            <label id="reviewMsgAbt"></label>
 
             <label for="rating">Rating:</label>
             <select name="rating" id="rating">
@@ -58,5 +58,85 @@
             <p>Follow us on <a herf="#">Social Media</a></p>
         </div>
     </footer>
+    <script>
+        let firstNameMsgAbt = document.getElementById("firstNameMsgAbt");
+        let lastNameMsgAbt = document.getElementById("lastNameMsgAbt");
+        let emailMsgAbt = document.getElementById("emailMsgAbt");
+        let reviewMsgAbt = document.getElementById("reviewMsgAbt");
+        let submitBtn = document.getElementById("submitBtn");
+
+        function validateFirstName(firstname){
+            const firstnameRegex = /^[A-Z][a-z]{1,15}$/;
+            return firstnameRegex.test(firstname);
+        }
+
+        function validateLastName(lastname){
+            const lastnameRegex = /^[A-Z][a-z]{1,15}$/;
+            return lastnameRegex.test(lastname);
+        }
+
+        function validateEmail(email){
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
+        submitBtn.addEventListener("click", function(event){
+            event.preventDefault();
+
+            let firstnameAbt = document.getElementById("firstnameAbt").value.trim();
+            let lastnameAbt = document.getElementById("lastnameAbt").value.trim();
+            let emailAbt = document.getElementById("emailAbt").value.trim();
+            let reviewAbt = document.getElementById("reviewAbt").value.trim();
+
+            firstNameMsgAbt.textContent="";
+            lastNameMsgAbt.textContent="";
+            emailMsgAbt.textContent="";
+            reviewMsgAbt.textContent="";
+
+            if(!firstnameAbt){
+                firstNameMsgAbt.style.color="red";
+                firstNameMsgAbt.style.fontStyle="italic";
+                firstNameMsgAbt.textContent="First name is required!";
+            } else if(!validateFirstName(firstnameAbt)){
+                firstNameMsgAbt.style.color="red";
+                firstNameMsgAbt.style.fontStyle="italic";
+                firstNameMsgAbt.textContent="First name must start with capital letter!";
+            }
+
+            if(!lastnameAbt){
+                lastNameMsgAbt.style.color="red";
+                lastNameMsgAbt.style.fontStyle="italic";
+                lastNameMsgAbt.textContent="Last name is required!";
+            } else if(!validateLastName(lastnameAbt)){
+                lastNameMsgAbt.style.color="red";
+                lastNameMsgAbt.style.fontStyle="italic";
+                lastNameMsgAbt.textContent="Last name must start with capital letter!";
+            }
+
+            if(!emailAbt){
+                emailMsgAbt.style.color="red";
+                emailMsgAbt.style.fontStyle="italic";
+                emailMsgAbt.textContent="Email is required!";
+            } else if(!validateEmail(emailAbt)){
+                emailMsgAbt.style.color="red";
+                emailMsgAbt.style.fontStyle="italic";
+                emailMsgAbt.textContent="Email is in the wrong format!";
+            }
+
+            if(!reviewAbt){
+                reviewMsgAbt.style.color="red";
+                reviewMsgAbt.style.fontStyle="italic";
+                reviewMsgAbt.textContent="Review is required!";
+            }
+
+            if(validateEmail(emailAbt) && validateFirstName(firstnameAbt) && validateLastName(lastnameAbt) && reviewAbt){
+                firstNameMsgAbt.textContent="";
+                lastNameMsgAbt.textContent="";
+                emailMsgAbt.textContent="";
+                reviewMsgAbt.textContent="";
+                window.location="index.html";
+            }
+        });
+    </script>
 </body>
 </html>
