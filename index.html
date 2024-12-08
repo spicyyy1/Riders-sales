@@ -7,57 +7,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <a href="index.html">
-            <img src="Screenshot_2024-12-04_193852-removebg-preview.png" alt="Logo" height="60vh" width="100%">
-        </a>
-        <h3>For car enthusiasts, by car enthusiasts...</h3>
-    </div>
-    <div class="navigation">
-        <a href="Explore.html">Explore</a>
-        <a href="Contact.html">Contact Us</a>
-        <a href="About.html">About Us</a>
-        <a href="Register.html">Register</a>
-        <a href="Login.html">Login</a>
-    </div>
-    <div class="slideImages-container">
-        <div class="slide fade">
-            <img src="first-background-image.png" alt="supercars" id="firstImage">
+    <div class="content">
+        <div class="header">
+            <a href="index.html">
+                <img src="Screenshot_2024-12-04_193852-removebg-preview.png" alt="Logo" height="60vh" width="100%">
+            </a>
+            <h3>For car enthusiasts, by car enthusiasts...</h3>
         </div>
-        <div class="slide fade">
-            <img src="second-background-image.png" alt="supercars" id="secondImage">
+        <div class="navigation">
+            <a href="Explore.html">Explore</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="About.html">About Us</a>
+            <a href="Register.html">Register</a>
+            <a href="Login.html">Login</a>
         </div>
-        <div class="slide fade">
-            <img src="third-background-image.png" alt="supercars" id="thirdImage">
+        <div class="slideImages-container">
+            <div class="slide fade">
+                <img src="first-background-image.png" alt="supercars" id="firstImage">
+            </div>
+            <div class="slide fade">
+                <img src="second-background-image.png" alt="supercars" id="secondImage">
+            </div>
+            <div class="slide fade">
+                <img src="third-background-image.png" alt="supercars" id="thirdImage">
+            </div>
         </div>
-    </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Riders Showroom. All rights reserved.</p>
-            <p>Follow us on <a herf="#">Social Media</a></p>
-        </div>
-    </footer>
-    <script>
-        let slideIndex = 0;
-        showSlides();
+        <footer>
+            <div class="container-footer">
+                <p>&copy; 2024 Riders Showroom. All rights reserved.</p>
+                <p>Follow us on <a herf="#">Social Media</a></p>
+            </div>
+        </footer>
+        <script>
+            let slideIndex = 0;
+            showSlides();
 
-        function showSlides(){
-            let slides = document.getElementsByClassName("slide");
+            function showSlides(){
+                let slides = document.getElementsByClassName("slide");
 
-            for(let i = 0; i < slides.length; i++){
-                slides[i].style.display="none";
+                for(let i = 0; i < slides.length; i++){
+                    slides[i].style.display="none";
+                }
+
+                if(slideIndex >= slides.length){
+                    slideIndex = 0;
+                }
+
+                slides[slideIndex].style.display = "block";
+
+                slideIndex++;
+
+                setTimeout(showSlides, 7000);
             }
-
-            if(slideIndex >= slides.length){
-                slideIndex = 0;
-            }
-
-            slides[slideIndex].style.display = "block";
-
-            slideIndex++;
-
-            setTimeout(showSlides, 7000);
-        }
-    </script>
+        </script>
+    </div>
 </body>
 </html>

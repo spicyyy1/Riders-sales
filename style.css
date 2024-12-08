@@ -1,6 +1,7 @@
 body{
     margin: 0;
     background-color: rgba(0, 0, 0, 1);
+    height: 100%;
 }
 .header{
     display: flex;
@@ -42,7 +43,7 @@ body{
     display: block;
  }
  .fade{
-    animation: fadeEffect 1.5sec;
+    animation: fadeEffect 1.5s;
  }
 .register{
     display: flex;
@@ -70,6 +71,19 @@ body{
     width: auto;
     height: auto;
     margin-top: 8%;
+}
+.container-footer{
+    display: flex;
+    background-color: rgb(25, 25, 25);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    font-size: 14px;
+    color: white;
+    padding: 0 1%;
+    position: relative;
+    bottom: 0;
 }
 
 
