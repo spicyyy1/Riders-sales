@@ -161,9 +161,18 @@ header .login-btn:hover {
     margin-bottom: 1rem;
 }
 
-footer {
-    color: #007BFF;
-    text-decoration: none;
+.container-footer{
+    display: flex;
+    background-color: rgb(25, 25, 25);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    font-size: 14px;
+    color: white;
+    padding: 0 1%;
+    position: relative;
+    bottom: 0;
 }
 
 @keyframes slideDown {
