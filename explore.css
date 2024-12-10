@@ -1,14 +1,14 @@
-body {
+.explorebody {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
-.container {
+.containerexplore {
     width: 80%;
     margin: 0 auto;
 }
-.header{
+.headerexplore{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,20 +17,11 @@ body {
     padding-left: 1%;
     padding-right: 1%;
 }
-.header h3{
+.headerexplore h3{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: italic;
     font-weight: lighter;
 }
-.navigation{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgb(25, 25, 25);
-    height: 7vh;
-}
-
 header {
     background: #1a1919;
     color: #fff;
