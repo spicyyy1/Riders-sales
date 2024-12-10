@@ -25,15 +25,15 @@
     <form class="feedbackform" method="post">
         <label for="firstname">Frist Name:</label>
         <input type="text" name="firstname" id="firstnameCon">
-        <label id="firstNameMsgCon"></label>
+        <label id="firstNameMsgCon"></label><br>
 
         <label for="lastname">Last Name:</label>
         <input type="text" name="lastname" id="lastnameCon">
-        <label id="lastNameMsgCon"></label>
+        <label id="lastNameMsgCon"></label><br>
 
         <label for="email">Email:</label>
         <input type="email" name="email" id="emailCon">
-        <label id="emailMsgCon"></label>
+        <label id="emailMsgCon"></label><br>
 
         <label for="category">Category:</label>
         <select name="category" id="category">
@@ -43,13 +43,13 @@
             <option value="dislike">Dislike</option>
             <option value="apply">Apply</option>
             <option value="other">Other...</option>
-        </select>
+        </select><br>
 
         <label for="message">Message:</label>
         <input type="text" name="message" id="message">
-        <label id="contactMsg"></label>
+        <label id="contactMsg"></label><br>
 
-        <input type="submit" value="Submit" id="submitBtn">
+        <input type="submit" value="Submit" id="submitBtn"><br>
     </form>
     </div>
 
@@ -88,12 +88,56 @@
             let firstnameCon = document.getElementById("firstnameCon").value.trim();
             let lastnameCon = document.getElementById("lastnameCon").value.trim();
             let emailCon = document.getElementById("emailCon").value.trim();
+            let message = document.getElementById("message").value.trim();
 
             firstNameMsgCon.textContent = "";
             lastNameMsgCon.textContent = "";
             emailMsgCon.textContent = "";
 
+            if(!firstnameCon){
+                firstNameMsgCon.style.color="red";
+                firstNameMsgCon.style.fontStyle="italic";
+                firstNameMsgCon.textContent="First name is required!";
+            } else if (!validateFirstNameCon(firstnameCon)){
+                firstNameMsgCon.style.color="red";
+                firstNameMsgCon.style.fontStyle="italic";
+                firstNameMsgCon.textContent="First name must start with capital letter!";
+            }
 
+            if(!lastnameCon){
+                lastNameMsgCon.style.color="red";
+                lastNameMsgCon.style.fontStyle="italic";
+                lastNameMsgCon.textContent="First name is required!";
+            } else if (!validateLastNameCon(lastnameCon)){
+                lastNameMsgCon.style.color="red";
+                lastNameMsgCon.style.fontStyle="italic";
+                lastNameMsgCon.textContent="Last name must start with capital letter!";
+            }
+
+            if(!emailCon){
+                emailMsgCon.style.color="red";
+                emailMsgCon.style.fontStyle="italic";
+                emailMsgCon.textContent="First name is required!";
+            } else if (!validateEmailCon(emailCon)){
+                emailMsgCon.style.color="red";
+                emailMsgCon.style.fontStyle="italic";
+                emailMsgCon.textContent="Email is in the wrong format!";
+            }
+
+            if(!message){
+                contactMsg.style.color="red";
+                contactMsg.style.fontStyle="italic";
+                contactMsg.textContent="Message is required!";
+            }
+
+            if(validateFirstNameCon(firstnameCon) && validateLastNameCon(lastnameCon) && validateEmailCon(emailCon) && message){
+                firstNameMsgCon.textContent="";
+                lastNameMsgCon.textContent="";
+                emailMsgCon.textContent="";
+                contactMsg.textContent="";
+                alert('Thank you for contacting us, we will get back to you as soon as possible');
+                window.location="Contact.html";
+            }
         });
     </script>
 </body>
