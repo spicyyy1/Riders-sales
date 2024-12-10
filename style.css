@@ -25,6 +25,17 @@ body{
     background-color: rgb(25, 25, 25);
     height: 7vh;
 }
+.navigation button{
+    background-color: orange;
+    border-radius: 1rem;
+    border: 0;
+    padding: 1rem;
+    margin: 1rem;
+}
+.navigation button:hover{
+    background-color: rgb(170, 111, 0);
+    cursor: pointer;
+}
  .slideImages-container{
     display: flex;
     position: relative;

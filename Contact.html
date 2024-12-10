@@ -20,11 +20,81 @@
         <button onclick="window.location='Register.html'">Register</button>
         <button onclick="window.location='Login.html'">Login</button>
     </div>
+
+    <div>
+    <form class="feedbackform" method="post">
+        <label for="firstname">Frist Name:</label>
+        <input type="text" name="firstname" id="firstnameCon">
+        <label id="firstNameMsgCon"></label>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastnameCon">
+        <label id="lastNameMsgCon"></label>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="emailCon">
+        <label id="emailMsgCon"></label>
+
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="concern">Concern</option>
+            <option value="praise">Praise</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="dislike">Dislike</option>
+            <option value="apply">Apply</option>
+            <option value="other">Other...</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <input type="text" name="message" id="message">
+        <label id="contactMsg"></label>
+
+        <input type="submit" value="Submit" id="submitBtn">
+    </form>
+    </div>
+
     <footer>
         <div class="container-footer">
             <p>&copy; 2024 Riders Showroom. All rights reserved.</p>
             <p>Follow us on <a herf="#">Social Media</a></p>
         </div>
     </footer>
+
+    <script>
+        let firstNameMsgCon = document.getElementById("firstNameMsgCon");
+        let lastNameMsgCon = document.getElementById("lastNameMsgCon");
+        let emailMsgCon = document.getElementById("emailMsgCon");
+        let contactMsg = document.getElementById("contactMsg");
+        let submitBtn = document.getElementById("submitBtn");
+
+        function validateFirstNameCon(firstnameCon){
+            const firstnameRegex = /^[A-Z][a-z]{1,15}$/;
+            return firstnameRegex.test(firstnameCon);
+        }
+
+        function validateLastNameCon(lastnameCon){
+            const lastnameRegex = /^[A-Z][a-z]{1,15}$/;
+            return lastnameRegex.test(lastnameCon);
+        }
+
+        function validateEmailCon(emailCon){
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(emailCon);
+        }
+
+        submitBtn.addEventListener("click", function(event){
+            event.preventDefault();
+
+            let firstnameCon = document.getElementById("firstnameCon").value.trim();
+            let lastnameCon = document.getElementById("lastnameCon").value.trim();
+            let emailCon = document.getElementById("emailCon").value.trim();
+
+            firstNameMsgCon.textContent = "";
+            lastNameMsgCon.textContent = "";
+            emailMsgCon.textContent = "";
+
+
+        });
+    </script>
 </body>
 </html>
