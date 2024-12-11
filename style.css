@@ -303,5 +303,12 @@ header .login-btn:hover {
     font-weight: 600;
     font-style: oblique;
 }
+#showhide{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 

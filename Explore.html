@@ -37,6 +37,11 @@
         </div>
     </section>
 
+    <div id="showhide">
+        <label for="toggle">Show/Hide Content</label>
+        <input type="checkbox" id="toggle" onclick="visibility()">
+    </div>
+
     <section id="services">
         <h2>Our Services</h2>
         <div class="service-grid">
@@ -73,6 +78,18 @@
             <p>Follow us on <a herf="#">Social Media</a></p>
         </div>
     </footer>
-    <script src="jscript.js"></script>
+
+    <script>
+        function visibility(){
+            const checkbox = document.getElementById('toggle');
+            const services = document.getElementById('services');
+
+            if(checkbox.checked){
+                services.style.display='none';
+            } else {
+                services.style.display='block';
+            }
+        }
+    </script>
 </body>
 </html>
