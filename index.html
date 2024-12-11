@@ -32,7 +32,14 @@
                 <img src="third-background-image.png" alt="supercars" id="thirdImage">
             </div>
         </div>
-        <div class="contentHome">
+
+        <div id="showhide" style="display: flex; flex-direction: row; justify-content: center; align-items: center; 
+        flex-wrap: wrap; color: black; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; padding-top: 0.5%;">
+            <label for="toggle">Show/Hide Content</label>
+            <input type="checkbox" id="toggle" onclick="visibility()">
+        </div>
+
+        <div class="contentHome" id="contentHome">
             <h3>Explore the World of Cars</h3>
             <p>Welcome to the ultimate hub for car enthusiasts, 
                 where innovation meets passion. Whether you're fascinated by the roar of a high-performance engine, 
@@ -85,7 +92,18 @@
 
                 setTimeout(showSlides, 7000);
             }
-        </script>
+
+            function visibility(){
+                const checkbox = document.getElementById('toggle');
+                const contentHome = document.getElementById('contentHome');
+
+                if(checkbox.checked){
+                    contentHome.style.display='none';
+                } else {
+                    contentHome.style.display='block';
+                }
+            }   
+                </script>
     </div>
 </body>
 </html>

@@ -104,3 +104,15 @@ registerBtn.addEventListener("click", function(event) {
         window.location="index.html";
     }
 });
+
+
+function visibility(){
+    const checkbox = document.getElementById('toggle');
+    const services = document.getElementById('services');
+
+    if(checkbox.checked){
+        services.style.display='none';
+    } else {
+        services.style.display='block';
+    }
+}
