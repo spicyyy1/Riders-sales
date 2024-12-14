@@ -21,6 +21,62 @@
             <button onclick="window.location='Register.html'">Register</button>
             <button onclick="window.location='Login.html'">Login</button>
         </div>
+
+        <section id="hero">
+            <div>
+                <h1>Welcome to Riders Exoctics</h1>
+                <p>Your vision, our responsibility...</p>
+                <a href="About.html" class="btn">Learn More</a>
+            </div>
+        </section>
+    
+        <section id="about">
+            <div class="containerexplore">
+                <h2>About Us</h2>
+                <p>At Riders Showroom, we offer a curated and preserved selection of the most excellent cars from every category, flowing with performance and luxury. Our sole mission is to ensure your dream car becomes a reality with every modification you can imagine. Our partners are happy to make your new ride a one of a kind!</p>
+            </div>
+        </section>
+    
+        <div id="showhide">
+            <label for="toggle">Show/Hide Content</label>
+            <input type="checkbox" id="toggle" onclick="visibility()">
+        </div>
+    
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="Showroom.avif" alt="Service 1">
+                    <h3>Wide Selection</h3>
+                    <p id="p1">Riders Showroom includes but is not limited to a wide selection of cars,
+                        ranging from various luxury brands, to the core oposite a monstrous selection of offroad vehicles!</p>
+                        <button onclick="changeContentp1()">Edit</button>
+                </div>
+                <div class="service-item">
+                    <img src="Wraps.webp" alt="Service 2">
+                    <h3>Custom Wraps</h3>
+                    <p id="p2">Riders Wraps specializes in high-quality car wraps, offering custom designs to transform and protect your vehicle's appearance.
+                         With precision and expertise, we provide durable, eye-catching wraps that make your ride stand out.</p>
+                         <button onclick="changeContentp2()">Edit</button>
+                </div>
+                <div class="service-item">
+                    <img src="carinsurance.jpg" alt="Service 3">
+                    <h3>Masterclass Insurance</h3>
+                    <p id="p3">Riders Insurance offers reliable and affordable car insurance solutions, providing comprehensive coverage to keep you protected on the road.
+                         With personalized plans and exceptional service, we ensure peace of mind for every driver.</p>
+                         <button onclick="changeContentp3()">Edit</button>
+                </div>
+                  <div class="service-item">
+                    <img src="Detailing.webp" alt="Service 4">
+                    <h3>Custom Detailing</h3>
+                    <p id="p4">Riders Auto Detailing is a professional car detailing service dedicated to restoring your vehicle's pristine condition.
+                        Offering a range of services including exterior washes, interior cleaning, waxing, and paint correction, we ensure every inch of your car shines like new. </p>
+                    <button onclick="changeContentp4()">Edit</button>
+                </div>
+            </div>
+        </section>
+    
+
         <footer>
             <div class="container-footer">
                 <p>&copy; 2024 Riders Showroom. All rights reserved.</p>
@@ -28,5 +84,6 @@
             </div>
         </footer>
     </div>
+    <script src="jscript.js"></script>
 </body>
 </html>

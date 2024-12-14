@@ -116,3 +116,47 @@ function visibility(){
         services.style.display='block';
     }
 }
+
+function changeContentp1(){
+    let permbajtja1 = document.getElementById('p1');
+    const permbajtja1New = prompt('Shkruni permbajtjen:', permbajtja1.innerText);
+
+    if (permbajtja1New !== null && permbajtja1New.trim() !== '') {
+        permbajtja1.innerText = permbajtja1New;
+    } else {
+        alert('Content cannot be empty!');
+    }
+}
+
+function changeContentp2(){
+    let permbajtja2 = document.getElementById('p2');
+    const permbajtja2New = prompt('Shkruni permbajtjen:', permbajtja2.innerText);
+
+    if (permbajtja2New !== null && permbajtja2New.trim() !== '') {
+        permbajtja2.innerText = permbajtja2New;
+    } else {
+        alert('Content cannot be empty!');
+    }
+}
+
+function changeContentp3(){
+    let permbajtja3 = document.getElementById('p3');
+    const permbajtja3New = prompt('Shkruni permbajtjen:', permbajtja3.innerText);
+
+    if (permbajtja3New !== null && permbajtja3New.trim() !== '') {
+        permbajtja3.innerText = permbajtja3New;
+    } else {
+        alert('Content cannot be empty!');
+    }
+}
+
+function changeContentp4(){
+    let permbajtja4 = document.getElementById('p4');
+    const permbajtja4New = prompt('Shkruni permbajtjen:', permbajtja4.innerText);
+
+    if (permbajtja4New !== null && permbajtja4New.trim() !== '') {
+        permbajtja4.innerText = permbajtja4New;
+    } else {
+        alert('Content cannot be empty!');
+    }
+}

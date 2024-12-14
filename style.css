@@ -70,6 +70,12 @@ body{
     width: auto;
     height: auto;
 }
+.loginbody{
+    background-color: black;
+}
+.registerbody{
+    background-color: black;
+}
 .login{
     display: flex;
     flex-direction: column;
@@ -326,6 +332,12 @@ header .login-btn:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+.adminBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 

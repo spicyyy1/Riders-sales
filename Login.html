@@ -31,11 +31,10 @@
             <label id="passwordMsg"></label><br>
 
             <input type="submit" value="Login" id="loginBtn">
-            <a href="AdminDashboard.html">
-                <button>Admin</button>
-            </a>
         </form>
-        
+        <div class="adminBtn">
+            <button onclick="window.location='AdminDashboard.html'">Admin</button>
+        </div>
         <script>
             let usernameMsg = document.getElementById("usernameMsg");
             let passwordMsg = document.getElementById("passwordMsg");
