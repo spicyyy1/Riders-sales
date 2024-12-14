@@ -123,6 +123,7 @@ function changeContentp1(){
 
     if (permbajtja1New !== null && permbajtja1New.trim() !== '') {
         permbajtja1.innerText = permbajtja1New;
+        localStorage.setItem('updatedContent1', permbajtja1New);
     } else {
         alert('Content cannot be empty!');
     }
@@ -134,6 +135,7 @@ function changeContentp2(){
 
     if (permbajtja2New !== null && permbajtja2New.trim() !== '') {
         permbajtja2.innerText = permbajtja2New;
+        localStorage.setItem('updatedContent2', permbajtja2New);
     } else {
         alert('Content cannot be empty!');
     }
@@ -145,6 +147,7 @@ function changeContentp3(){
 
     if (permbajtja3New !== null && permbajtja3New.trim() !== '') {
         permbajtja3.innerText = permbajtja3New;
+        localStorage.setItem('updatedContent3', permbajtja3New);
     } else {
         alert('Content cannot be empty!');
     }
@@ -156,6 +159,7 @@ function changeContentp4(){
 
     if (permbajtja4New !== null && permbajtja4New.trim() !== '') {
         permbajtja4.innerText = permbajtja4New;
+        localStorage.setItem('updatedContent4', permbajtja4New);
     } else {
         alert('Content cannot be empty!');
     }

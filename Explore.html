@@ -48,26 +48,54 @@
             <div class="service-item">
                 <img src="Showroom.avif" alt="Service 1">
                 <h3>Wide Selection</h3>
-                <p>Riders Showroom includes but is not limited to a wide selection of cars,
+                <p id="p1">Riders Showroom includes but is not limited to a wide selection of cars,
                     ranging from various luxury brands, to the core oposite a monstrous selection of offroad vehicles!</p>
+                <script>
+                    const updatedContent1 = localStorage.getItem('updatedContent1');
+
+                    if(updatedContent1){
+                        document.getElementById('p1').innerText=updatedContent1;
+                    }
+                </script>
             </div>
             <div class="service-item">
                 <img src="Wraps.webp" alt="Service 2">
                 <h3>Custom Wraps</h3>
-                <p>Riders Wraps specializes in high-quality car wraps, offering custom designs to transform and protect your vehicle's appearance.
+                <p id="p2">Riders Wraps specializes in high-quality car wraps, offering custom designs to transform and protect your vehicle's appearance.
                      With precision and expertise, we provide durable, eye-catching wraps that make your ride stand out.</p>
+                <script>
+                    const updatedContent2 = localStorage.getItem('updatedContent2');
+    
+                    if(updatedContent1){
+                        document.getElementById('p2').innerText=updatedContent2;
+                    }
+                </script>
             </div>
             <div class="service-item">
                 <img src="carinsurance.jpg" alt="Service 3">
                 <h3>Masterclass Insurance</h3>
-                <p>Riders Insurance offers reliable and affordable car insurance solutions, providing comprehensive coverage to keep you protected on the road.
+                <p id="p3">Riders Insurance offers reliable and affordable car insurance solutions, providing comprehensive coverage to keep you protected on the road.
                      With personalized plans and exceptional service, we ensure peace of mind for every driver.</p>
+                <script>
+                    const updatedContent3 = localStorage.getItem('updatedContent3');
+        
+                    if(updatedContent3){
+                        document.getElementById('p3').innerText=updatedContent3;
+                    }
+                </script>
             </div>
               <div class="service-item">
                 <img src="Detailing.webp" alt="Service 4">
                 <h3>Custom Detailing</h3>
-                <p>Riders Auto Detailing is a professional car detailing service dedicated to restoring your vehicle's pristine condition.
+                <p id="p4">Riders Auto Detailing is a professional car detailing service dedicated to restoring your vehicle's pristine condition.
                     Offering a range of services including exterior washes, interior cleaning, waxing, and paint correction, we ensure every inch of your car shines like new. </p>
+                <script>
+                    const updatedContent4 = localStorage.getItem('updatedContent4');
+            
+                    if(updatedContent4){
+                        document.getElementById('p4').innerText=updatedContent4;
+                    }
+                </script>
             </div>
         </div>
     </section>
@@ -78,7 +106,5 @@
             <p>Follow us on <a herf="#">Social Media</a></p>
         </div>
     </footer>
-
-    <script src="jscript.js"></script>
 </body>
 </html>
