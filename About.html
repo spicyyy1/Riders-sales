@@ -4,35 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="About.css">
 </head>
 <body>
-    <div class="header">
-        <a href="index.html">
-            <img src="Screenshot_2024-12-04_193852-removebg-preview.png" alt="Logo" height="60vh" width="100%">
-        </a>
-        <h3>For car enthusiasts, by car enthusiasts...</h3>
-    </div>
-    <div class="navigation">
-        <button onclick="window.location='Explore.html'">Explore</button>
-        <button onclick="window.location='Contact.html'">Contact Us</button>
-        <button onclick="window.location='About.html'">About Us</button>
-        <button onclick="window.location='Register.html'">Register</button>
-        <button onclick="window.location='Login.html'">Login</button>
-    </div>
+    <video id="bigVid" autoplay loop muted playsinline>
+        <source src="992 night run.mp4" type="video/mp4">
+    </video>
+    <div class="main-content">
+        <div class="header">
+            <a href="index.html">
+                <img src="Screenshot_2024-12-04_193852-removebg-preview.png" alt="Logo" height="60vh" width="100%">
+            </a>
+            <h3>For car enthusiasts, by car enthusiasts...</h3>
+        </div>
+        <div class="navigation">
+            <button onclick="window.location='Explore.html'">Explore</button>
+            <button onclick="window.location='Contact.html'">Contact Us</button>
+            <button onclick="window.location='About.html'">About Us</button>
+            <button onclick="window.location='Register.html'">Register</button>
+            <button onclick="window.location='Login.html'">Login</button>
+        </div>
 
     <div class="content">
         <h2>What we offer:</h2>
-        <div>
-            <ul class="list">
-                <li>Custom Wraps</li>
-                <li>Masterclass Insurance</li>
-                <li>Custom Detailing</li>
-                <li>And much more...</li>
-            </ul>
-        </div>
+       <div class="mini-table">
+        <table>
+            <tr>
+                <th>Custom Wraps</th>
+                <th>In Depth Detailing</th>
+                <th>Reliable Insurance</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Wraps.webp" alt="Custom Wraps">
+                    <p>Stylish and unique wraps for your vehicles.</p>
+                </td>
+                <td>
+                    <img src="Detailing.webp" alt="Detailing">
+                    <p>Top-tier detailing services for all vehicles.</p>
+                </td>
+                <td>
+                    <img src="carinsurance.jpg" alt="Insurance">
+                    <p>Top-tier detailing services for all vehicles.</p>
+                </td>
+            </tr>
+        </table>
+       </div>
         <div class="table">
-            <table border="1">
+            <table>
                 <caption>Our Sales:</caption>
                 <tr>
                     <th>Wraps</th>
