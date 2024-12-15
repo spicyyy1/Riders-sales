@@ -347,5 +347,40 @@ header .login-btn:hover {
     margin: auto;
     object-fit: cover;
 }
+.mini-list ul {
+    display: flex; 
+    justify-content: space-around; 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.mini-list li {
+    text-align: center; 
+    flex: 1; 
+    padding: 1rem;
+    margin: 0 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5%; 
+    background-color: #f9f9f9; 
+}
+
+.mini-list img {
+    max-width: 50%; 
+    height: auto; 
+    margin-bottom: 1rem;
+    border-radius: 5%;
+}
+
+.mini-list h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem; 
+}
+
+.mini-list p {
+    font-size: 0.9rem; 
+    color: #666; 
+}
+
 
 
