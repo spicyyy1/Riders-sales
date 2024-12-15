@@ -76,6 +76,12 @@ body{
 .registerbody{
     background-color: black;
 }
+.reviewbody{
+    background-color: black;
+}
+.contactbody{
+    background-color: black;
+}
 .login{
     display: flex;
     flex-direction: column;
