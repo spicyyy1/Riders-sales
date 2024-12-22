@@ -9,17 +9,17 @@
 <body>
     <div class="content">
         <div class="header">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="Screenshot_2024-12-04_193852-removebg-preview.png" alt="Logo" height="60vh" width="100%">
             </a>
             <h3 style="color: black;">For car enthusiasts, by car enthusiasts...</h3>
         </div>
         <div class="navigation">
-            <button onclick="window.location='Explore.html'">Explore</button>
-            <button onclick="window.location='Contact.html'">Contact Us</button>
-            <button onclick="window.location='About.html'">About Us</button>
-            <button onclick="window.location='Register.html'">Register</button>
-            <button onclick="window.location='Login.html'">Login</button>
+            <button onclick="window.location='Explore.php'">Explore</button>
+            <button onclick="window.location='Contact.php'">Contact Us</button>
+            <button onclick="window.location='About.php'">About Us</button>
+            <button onclick="window.location='Register.php'">Register</button>
+            <button onclick="window.location='Login.php'">Login</button>
         </div>
         <div class="slideImages-container">
             <div class="slide fade">

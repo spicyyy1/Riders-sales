@@ -8,25 +8,25 @@
 </head>
 <body class="explorebody">
     <div class="headerexplore">
-        <a href="index.html">
+        <a href="index.php">
             <img src="Screenshot_2024-12-04_193852-removebg-preview.png" alt="Logo" height="60vh" width="100%">
         </a>
         <h3>For car enthusiasts, by car enthusiasts...</h3>
     </div>
 
     <div class="navigation">
-        <button onclick="window.location='Explore.html'">Explore</button>
-        <button onclick="window.location='Contact.html'">Contact Us</button>
-        <button onclick="window.location='About.html'">About Us</button>
-        <button onclick="window.location='Register.html'">Register</button>
-        <button onclick="window.location='Login.html'">Login</button>
+        <button onclick="window.location='Explore.php'">Explore</button>
+        <button onclick="window.location='Contact.php'">Contact Us</button>
+        <button onclick="window.location='About.php'">About Us</button>
+        <button onclick="window.location='Register.php'">Register</button>
+        <button onclick="window.location='Login.php'">Login</button>
     </div>
 
     <section id="hero">
         <div>
             <h1>Welcome to Riders Exoctics</h1>
             <p>Your vision, our responsibility...</p>
-            <a href="About.html" class="btn">Learn More</a>
+            <a href="About.php" class="btn">Learn More</a>
         </div>
     </section>
 
