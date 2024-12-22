@@ -77,7 +77,7 @@
                     passwordMsg.style.color="red";
                     passwordMsg.style.fontStyle="italic";
                     passwordMsg.textContent="Password is in the wrong format!";
-                }  
+                }
                 
                 if(validateEmail(username) && validatePassword(password)){
                     usernameMsg.textContent="";

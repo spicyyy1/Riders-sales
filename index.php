@@ -33,37 +33,29 @@
             </div>
         </div>
 
-        <div id="showhide" style="display: flex; flex-direction: row; justify-content: center; align-items: center; 
-        flex-wrap: wrap; color: black; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; padding-top: 0.5%;">
+        <div id="showhide" style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap; color: black; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; padding-top: 0.5%;">
             <label for="toggle">Show/Hide Content</label>
             <input type="checkbox" id="toggle" onclick="visibility()">
         </div>
 
         <div class="contentHome" id="contentHome">
             <h3>Explore the World of Cars</h3>
-            <p>Welcome to the ultimate hub for car enthusiasts, 
-                where innovation meets passion. Whether you're fascinated by the roar of a high-performance engine, 
-                the elegance of luxury vehicles, or the eco-friendly efficiency of electric cars, we have something for you.</p><br>
+            <p>Welcome to the ultimate hub for car enthusiasts, where innovation meets passion. Whether you're fascinated by the roar of a high-performance engine, the elegance of luxury vehicles, or the eco-friendly efficiency of electric cars, we have something for you.</p><br>
             
             <h3>Discover Automotive Excellence</h3>
-            <p>Dive into the fascinating world of automobiles. From timeless classics to cutting-edge modern designs, 
-                explore how cars shape the way we move, work, and live.</p><br>
+            <p>Dive into the fascinating world of automobiles. From timeless classics to cutting-edge modern designs, explore how cars shape the way we move, work, and live.</p><br>
 
             <h3>Latest Trends & Technologies</h3>
-            <p>Stay up-to-date with the newest advancements in the automotive industry. Discover self-driving technologies, hybrid innovations, 
-                and the rise of sustainable electric vehicles driving the future of transportation.</p><br>
+            <p>Stay up-to-date with the newest advancements in the automotive industry. Discover self-driving technologies, hybrid innovations, and the rise of sustainable electric vehicles driving the future of transportation.</p><br>
 
             <h3>Reviews, Guides, & Comparisons</h3>
-            <p>Not sure which car is right for you? Browse our in-depth reviews, buying guides, 
-                and side-by-side comparisons to make an informed choice tailored to your needs.</p><br>
+            <p>Not sure which car is right for you? Browse our in-depth reviews, buying guides, and side-by-side comparisons to make an informed choice tailored to your needs.</p><br>
 
             <h3>Community of Car Lovers</h3>
-            <p>Join a thriving community of gearheads, collectors, and casual fans. Share your stories, exchange tips, 
-                and celebrate the art of driving with like-minded enthusiasts.</p><br>
+            <p>Join a thriving community of gearheads, collectors, and casual fans. Share your stories, exchange tips, and celebrate the art of driving with like-minded enthusiasts.</p><br>
             
             <h3>Start Your Journey</h3>
-            <p>Fuel your curiosity and let your exploration begin. Whether you're searching for your dream car, seeking inspiration, 
-                or simply indulging in your passion for automobiles, this is the place for you.</p> <br>
+            <p>Fuel your curiosity and let your exploration begin. Whether you're searching for your dream car, seeking inspiration, or simply indulging in your passion for automobiles, this is the place for you.</p> <br>
         </div>
         <footer>
             <div class="container-footer">
@@ -102,8 +94,8 @@
                 } else {
                     contentHome.style.display='block';
                 }
-            }   
-                </script>
+            }
+            </script>
     </div>
 </body>
 </html>
