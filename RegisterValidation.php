@@ -9,8 +9,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             "lastname" => $_POST["lastname"],
             "email" => $_POST["email"],
             "password" => $_POST["password"],
-            "dateofbirth" => $_POST["dateofbirth"],
-            "gender" => $_POST["gender"],
+            "dateofbirth" => $_POST["Date of Birth"],
+            "gender" => $_POST["Gender"],
         ];
 
         $response = Register($conn, $user);

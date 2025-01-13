@@ -22,7 +22,7 @@
         <button onclick="window.location='Login.php'">Login</button>
     </div>
     <div>
-        <form action="RegisterValidation.php" class="register" method="post">
+        <form action="RegisterValidation.php" class="register" method="POST">
             <label for="firstname">First Name</label>
             <input type="text" name="firstname" id="firstname">
             <label id="firstNameMsg"></label><br>
