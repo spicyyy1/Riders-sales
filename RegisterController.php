@@ -1,4 +1,6 @@
 <?php
+require_once 'DatabaseConnection.php';
+
     function Register($conn, $user){
         $firstname = $user["firstname"];
         $lastname = $user["lastname"];
