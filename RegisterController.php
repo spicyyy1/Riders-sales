@@ -17,4 +17,16 @@ require_once 'DatabaseConnection.php';
             echo "Error: " . mysqli_error($conn);
         }
     }
+
+    $user = [
+    "firstname"=>"John",
+    "lastname"=>"Snow",
+    "email"=>"johnsnow",
+    "password"=>"John123!",
+    "dateofbirth"=>"1987-05-26",
+    "gender"=>'M'
+];
+
+$response = Register($conn,$user);
+
 ?>

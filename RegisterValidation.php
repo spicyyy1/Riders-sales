@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             "gender" => $_POST["gender"],
         ];
 
-        Register($conn, $user);
+        $response = Register($conn, $user);
     } else {
         echo "Ploteso te gjitha fushat";
     }
