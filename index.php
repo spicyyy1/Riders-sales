@@ -1,8 +1,8 @@
 <?php
 session_start();
-echo $_SESSION["username"];
-if(!isset($_SESSION["username"])){
-    header("Location: login.php");
+echo $_SESSION["email"];
+if(!isset($_SESSION["email"])){
+    header("Location: Login.php");
 }
 ?>
 
