@@ -26,7 +26,7 @@ while ($row = $result->fetch_assoc()) {
             <td>{$row['Gender']}</td>
             <td>
                 <a href='DeleteUser.php?id={$row['ID']}'>Fshi</a> |
-                <a href='EditUser.php?id={$row['ID']}'>Përditëso</a>
+                <a href='EditUsers.php?id={$row['ID']}'>Përditëso</a>
             </td>
           </tr>";
 }
