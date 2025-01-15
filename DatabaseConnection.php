@@ -11,4 +11,5 @@
     } else {
         echo "Lidhja me databaze eshte OK";
     }
+
 ?>

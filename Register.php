@@ -40,11 +40,11 @@
             <label id="passwordMsg"></label><br>
 
             <label for="dob">Date of Birth:</label>
-            <input type="date" name="Date of Birth" id="dob">
+            <input type="date" name="dateofbirth" id="dob">
             <label id="dobMsg"></label><br>
 
             <label for="Gender">Gender:</label>
-            <select name="Gender" id="gender">
+            <select name="gender" id="gender">
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select><br>
@@ -58,6 +58,6 @@
         </div>
     </footer>
     </div>
-    <script src="jscript.js"></script>
+    <!-- <script src="jscript.js"></script> -->
 </body>
 </html>
