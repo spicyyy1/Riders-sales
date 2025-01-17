@@ -12,9 +12,9 @@ require_once 'DatabaseConnection.php';
         $sql = "insert into users (firstname, lastname, email, password, dateofbirth, gender) values ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$gender')";
 
         if(mysqli_query($conn, $sql)){
-            echo " User added successfully";
+            return true;
         } else {
-            echo "Error: " . mysqli_error($conn);
+            return false;
         }
     }
 ?>
