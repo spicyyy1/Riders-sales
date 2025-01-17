@@ -14,9 +14,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         ];
 
         $response = Register($conn, $user);
+    
+    if($response){
+        header("Location: Login.php");
+        exit;
     } else {
         echo " Ploteso te gjitha fushat";
     }
+}
 }
 $conn->close();
 ?>
