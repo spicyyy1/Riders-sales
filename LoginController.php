@@ -1,22 +1,18 @@
 <?php
+function Login($conn, $email, $password) {
+    $sql = "SELECT email FROM users WHERE email = ? AND password = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-function Login($conn, $email, $password){
-    $sql = "select email from users where email = '$email' and password = '$password'";
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_row();
 
-    $result = mysqli_query($conn, $sql);
-
-    if(mysqli_num_rows($result) > 0){
-        $row = mysqli_fetch_row($result);
-        
         session_start();
         $_SESSION["username"] = $row[0];
-        header("Location: index.php");
-        exit;
-    }else{
-        echo "Error: ". mysqli_error($conn);
-        header("Location: Login.php");
-        exit;
+        return true;
     }
+    return false;
 }
-
 ?>
