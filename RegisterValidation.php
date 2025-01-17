@@ -18,9 +18,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     if($response){
         header("Location: Login.php");
         exit;
-    } else {
-        echo " Ploteso te gjitha fushat";
-    }
+    } 
+} else {
+    echo " Ploteso te gjitha fushat";
 }
 }
 $conn->close();

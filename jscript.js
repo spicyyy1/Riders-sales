@@ -101,6 +101,7 @@ registerBtn.addEventListener("click", function(event) {
         emailMsg.textContent="";
         passwordMsg.textContent="";
         dobMsg.textContent="";
+
         document.querySelector(".register").submit();
     }
 });

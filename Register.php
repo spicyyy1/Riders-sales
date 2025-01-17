@@ -58,6 +58,6 @@
         </div>
     </footer>
     </div>
-    <script src="jscript.js"></script>
+    <!-- <script src="jscript.js"></script> -->
 </body>
 </html>

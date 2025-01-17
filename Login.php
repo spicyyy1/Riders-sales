@@ -51,40 +51,37 @@
             }
 
             loginBtn.addEventListener("click", function (event) {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            usernameMsg.textContent = "";
+            passwordMsg.textContent = "";
+
+            if (!username) {
+                usernameMsg.style.color = "red";
+                usernameMsg.style.fontStyle = "italic";
+                usernameMsg.textContent = "Email is required!";
                 event.preventDefault();
+            } else if (!validateEmail(username)) {
+                usernameMsg.style.color = "red";
+                usernameMsg.style.fontStyle = "italic";
+                usernameMsg.textContent = "Email is in the wrong format!";
+                event.preventDefault();
+            }
 
-                let username = document.getElementById("username").value.trim();
-                let password = document.getElementById("password").value.trim();
+            if (!password) {
+                passwordMsg.style.color = "red";
+                passwordMsg.style.fontStyle = "italic";
+                passwordMsg.textContent = "Password is required!";
+                event.preventDefault();
+            } else if (!validatePassword(password)) {
+                passwordMsg.style.color = "red";
+                passwordMsg.style.fontStyle = "italic";
+                passwordMsg.textContent = "Password is in the wrong format!";
+                event.preventDefault();
+            }
+        });
 
-                usernameMsg.textContent = "";
-                passwordMsg.textContent = "";
-
-                if(!username){
-                    usernameMsg.style.color="red";
-                    usernameMsg.style.fontStyle="italic";
-                    usernameMsg.textContent="Email is required!";
-                } else if(!validateEmail(username)){
-                    usernameMsg.style.color="red";
-                    usernameMsg.style.fontStyle="italic";
-                    usernameMsg.textContent="Email is in the wrong format!";
-                }
-
-                if(!password){
-                    passwordMsg.style.color="red";
-                    passwordMsg.style.fontStyle="italic";
-                    passwordMsg.textContent="Password is required!";
-                } else if(!validatePassword(password)){
-                    passwordMsg.style.color="red";
-                    passwordMsg.style.fontStyle="italic";
-                    passwordMsg.textContent="Password is in the wrong format!";
-                }
-                
-                if(validateEmail(username) && validatePassword(password)){
-                    usernameMsg.textContent="";
-                    passwordMsg.textContent="";
-                    window.location="index.php";
-                }
-            });
         </script>
     </div>
     <footer>
