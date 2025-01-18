@@ -7,7 +7,7 @@
     $conn = mysqli_connect($server, $username, $password, $database);
 
     if(!$conn){
-        return false;;
+        return false;
     } else {
         return true;
     }

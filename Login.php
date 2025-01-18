@@ -21,7 +21,7 @@
         <button onclick="window.location='Login.php'">Login</button>
     </div>
     <div>
-        <form class="login" method="post">
+        <form action="LoginValidation.php" class="login" method="post">
             <label for="username">Email</label>
             <input type="email" name="username" id="username">
             <label id="usernameMsg"></label><br>

@@ -23,7 +23,7 @@
     </div>
 
     <div>
-        <form class="feedbackform" method="post">
+        <form action="ReviewValidation.php" class="feedbackform" method="post">
             <label for="firstname">Frist Name:</label>
             <input type="text" name="firstname" id="firstnameAbt">
             <label id="firstNameMsgAbt"></label>
