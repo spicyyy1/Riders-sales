@@ -1,6 +1,6 @@
 <?php
 require_once 'DatabaseConnection.php';
-require_once 'RegisterController.php';
+require_once 'ReviewController.php';
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     if(!empty($_POST["firstname"]) && !empty($_POST["lastname"]) && !empty($_POST["email"]) && !empty($_POST["review"]) && !empty($_POST["rating"])){
@@ -8,9 +8,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             'firstname' => $_POST['firstname'],
             'lastname' => $_POST['lastname'],
             'email' => $_POST['email'],
-            'password' => $_POST['password'],
-            'dateofbirth' => $_POST['dateofbirth'],
-            'gender' => $_POST['gender'],
+            'review' => $_POST['review'],
+            'rating' => $_POST['rating'],
         ];
 
         $response = Review($conn, $user);

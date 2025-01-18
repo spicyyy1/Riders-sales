@@ -8,7 +8,7 @@ function Review($conn, $user){
     $review = $user['review'];
     $rating = $user['rating'];
 
-    $sql = "insert into users (firstname, lastname, email, review, rating) values ('$firstname', '$lastname', '$email', '$review', '$rating')";
+    $sql = "insert into reviews (firstname, lastname, email, review, rating) values ('$firstname', '$lastname', '$email', '$review', '$rating')";
 
     if(!mysqli_query($conn, $sql)){
         echo "Error: " . mysqli_error($conn);

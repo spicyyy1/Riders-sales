@@ -82,63 +82,42 @@
             return emailRegex.test(email);
         }
 
-        submitBtn.addEventListener("click", function(event){
-            event.preventDefault();
-
+        submitBtn.addEventListener("click", function (event) {
             let firstnameAbt = document.getElementById("firstnameAbt").value.trim();
             let lastnameAbt = document.getElementById("lastnameAbt").value.trim();
             let emailAbt = document.getElementById("emailAbt").value.trim();
             let reviewAbt = document.getElementById("reviewAbt").value.trim();
 
-            firstNameMsgAbt.textContent="";
-            lastNameMsgAbt.textContent="";
-            emailMsgAbt.textContent="";
-            reviewMsgAbt.textContent="";
+            let valid = true;
 
-            if(!firstnameAbt){
-                firstNameMsgAbt.style.color="red";
-                firstNameMsgAbt.style.fontStyle="italic";
-                firstNameMsgAbt.textContent="First name is required!";
-            } else if(!validateFirstName(firstnameAbt)){
-                firstNameMsgAbt.style.color="red";
-                firstNameMsgAbt.style.fontStyle="italic";
-                firstNameMsgAbt.textContent="First name must start with capital letter!";
+            firstNameMsgAbt.textContent = "";
+            lastNameMsgAbt.textContent = "";
+            emailMsgAbt.textContent = "";
+            reviewMsgAbt.textContent = "";
+
+            if (!firstnameAbt || !validateFirstName(firstnameAbt)) {
+                firstNameMsgAbt.textContent = "Invalid first name!";
+                valid = false;
             }
 
-            if(!lastnameAbt){
-                lastNameMsgAbt.style.color="red";
-                lastNameMsgAbt.style.fontStyle="italic";
-                lastNameMsgAbt.textContent="Last name is required!";
-            } else if(!validateLastName(lastnameAbt)){
-                lastNameMsgAbt.style.color="red";
-                lastNameMsgAbt.style.fontStyle="italic";
-                lastNameMsgAbt.textContent="Last name must start with capital letter!";
+            if (!lastnameAbt || !validateLastName(lastnameAbt)) {
+                lastNameMsgAbt.textContent = "Invalid last name!";
+                valid = false;
             }
 
-            if(!emailAbt){
-                emailMsgAbt.style.color="red";
-                emailMsgAbt.style.fontStyle="italic";
-                emailMsgAbt.textContent="Email is required!";
-            } else if(!validateEmail(emailAbt)){
-                emailMsgAbt.style.color="red";
-                emailMsgAbt.style.fontStyle="italic";
-                emailMsgAbt.textContent="Email is in the wrong format!";
+            if (!emailAbt || !validateEmail(emailAbt)) {
+                emailMsgAbt.textContent = "Invalid email!";
+                valid = false;
             }
 
-            if(!reviewAbt){
-                reviewMsgAbt.style.color="red";
-                reviewMsgAbt.style.fontStyle="italic";
-                reviewMsgAbt.textContent="Review is required!";
+            if (!reviewAbt) {
+                reviewMsgAbt.textContent = "Review is required!";
+                valid = false;
             }
 
-            if(validateEmail(emailAbt) && validateFirstName(firstnameAbt) && validateLastName(lastnameAbt) && reviewAbt){
-                firstNameMsgAbt.textContent="";
-                lastNameMsgAbt.textContent="";
-                emailMsgAbt.textContent="";
-                reviewMsgAbt.textContent="";
-                window.location="index.php";
-            }
+            if (!valid) event.preventDefault();
         });
+
     </script>
 </body>
 </html>
