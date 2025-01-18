@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $dateofbirth = $_POST['dateofbirth'];
     $gender = $_POST['gender'];
 
-    $sql = "update users set firstname = '$firstname', lastname = '$lastname', email = '$email', password = '$password', dateofbirth = '$dateofbirth', gender = '$gender'";
+    $sql = "update users set firstname = '$firstname', lastname = '$lastname', email = '$email', password = '$password', dateofbirth = '$dateofbirth', gender = '$gender' where id = $id";
 
     if(!mysqli_query($conn, $sql)){
         echo " Error: " . mysqli_error($conn);

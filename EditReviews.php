@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $review = $_POST['review'];
     $rating = $_POST['rating'];
 
-    $sql = "update reviews set firstname = '$firstname', lastname = '$lastname', email = '$email', review = '$review', rating = '$rating'";
+    $sql = "update reviews set firstname = '$firstname', lastname = '$lastname', email = '$email', review = '$review', rating = '$rating' where id = $id";
 
     if(!mysqli_query($conn, $sql)){
         echo " Error: " . mysqli_error($conn);
@@ -37,7 +37,7 @@ if(isset($_GET['id'])){
                 <option value="2">2</option>
                 <option value="1">1</option>
             </select><br>
-    <button type="submit">Perditso Userin</button>
+    <button type="submit">Perditso Review</button>
 </form>
 <?php
 $conn->close();

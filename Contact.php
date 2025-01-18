@@ -1,9 +1,9 @@
 <?php
-session_start();
-echo $_SESSION["email"];
-if(!isset($_SESSION["email"])){
-    header("Location: Login.php");
-}
+// session_start();
+// echo $_SESSION["email"];
+// if(!isset($_SESSION["email"])){
+//     header("Location: Login.php");
+// }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ if(!isset($_SESSION["email"])){
     </div>
 
     <div>
-    <form class="feedbackform" method="post">
+    <form action="ContactValidation.php" class="feedbackform" method="post">
         <label for="firstname">Frist Name:</label>
         <input type="text" name="firstname" id="firstnameCon">
         <label id="firstNameMsgCon"></label><br>
@@ -92,61 +92,43 @@ if(!isset($_SESSION["email"])){
             return emailRegex.test(emailCon);
         }
 
-        submitBtn.addEventListener("click", function(event){
-            event.preventDefault();
-
+        submitBtn.addEventListener("click", function (event) {
             let firstnameCon = document.getElementById("firstnameCon").value.trim();
             let lastnameCon = document.getElementById("lastnameCon").value.trim();
             let emailCon = document.getElementById("emailCon").value.trim();
             let message = document.getElementById("message").value.trim();
 
+            let valid = true;
+
             firstNameMsgCon.textContent = "";
             lastNameMsgCon.textContent = "";
             emailMsgCon.textContent = "";
+            contactMsg.textContent = "";
 
-            if(!firstnameCon){
-                firstNameMsgCon.style.color="red";
-                firstNameMsgCon.style.fontStyle="italic";
-                firstNameMsgCon.textContent="First name is required!";
-            } else if (!validateFirstNameCon(firstnameCon)){
-                firstNameMsgCon.style.color="red";
-                firstNameMsgCon.style.fontStyle="italic";
-                firstNameMsgCon.textContent="First name must start with capital letter!";
+            if (!firstnameCon || !validateFirstNameCon(firstnameCon)) {
+                firstNameMsgCon.textContent = "First name is required and must start with a capital letter!";
+                valid = false;
             }
 
-            if(!lastnameCon){
-                lastNameMsgCon.style.color="red";
-                lastNameMsgCon.style.fontStyle="italic";
-                lastNameMsgCon.textContent="First name is required!";
-            } else if (!validateLastNameCon(lastnameCon)){
-                lastNameMsgCon.style.color="red";
-                lastNameMsgCon.style.fontStyle="italic";
-                lastNameMsgCon.textContent="Last name must start with capital letter!";
+            if (!lastnameCon || !validateLastNameCon(lastnameCon)) {
+                lastNameMsgCon.textContent = "Last name is required and must start with a capital letter!";
+                valid = false;
             }
 
-            if(!emailCon){
-                emailMsgCon.style.color="red";
-                emailMsgCon.style.fontStyle="italic";
-                emailMsgCon.textContent="First name is required!";
-            } else if (!validateEmailCon(emailCon)){
-                emailMsgCon.style.color="red";
-                emailMsgCon.style.fontStyle="italic";
-                emailMsgCon.textContent="Email is in the wrong format!";
+            if (!emailCon || !validateEmailCon(emailCon)) {
+                emailMsgCon.textContent = "Valid email is required!";
+                valid = false;
             }
 
-            if(!message){
-                contactMsg.style.color="red";
-                contactMsg.style.fontStyle="italic";
-                contactMsg.textContent="Message is required!";
+            if (!message) {
+                contactMsg.textContent = "Message is required!";
+                valid = false;
             }
 
-            if(validateFirstNameCon(firstnameCon) && validateLastNameCon(lastnameCon) && validateEmailCon(emailCon) && message){
-                firstNameMsgCon.textContent="";
-                lastNameMsgCon.textContent="";
-                emailMsgCon.textContent="";
-                contactMsg.textContent="";
+            if (!valid) event.preventDefault();
+            else {
                 alert('Thank you for contacting us, we will get back to you as soon as possible');
-                window.location="Contact.php";
+                window.location = "Contact.php";
             }
         });
     </script>
