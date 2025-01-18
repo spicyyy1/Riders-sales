@@ -52,7 +52,7 @@ while ($row = $result->fetch_assoc()) {
             <td>{$row['Review']}</td>
             <td>{$row['Rating']}</td>
             <td>
-                <a href='DeleteUser.php?id={$row['ID']}'>Fshi</a> |
+                <a href='DeleteReview.php?id={$row['ID']}'>Fshi</a> |
                 <a href='EditReviews.php?id={$row['ID']}'>Përditëso</a>
             </td>
           </tr>";
