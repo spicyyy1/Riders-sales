@@ -13,6 +13,7 @@ echo "<tr>
         <th>Password</th>
         <th>Date of birth</th>
         <th>Gender</th>
+        <th>Options</th>
       </tr>";
 
 while ($row = $result->fetch_assoc()) {
@@ -42,6 +43,7 @@ echo "<tr>
         <th>Email</th>
         <th>Review</th>
         <th>Rating</th>
+        <th>Options</th>
       </tr>";
 
 while ($row = $result->fetch_assoc()) {
@@ -69,6 +71,7 @@ echo "<tr>
         <th>Email</th>
         <th>Category</th>
         <th>Message</th>
+        <th>Options</th>
       </tr>";
 
 while ($row = $result->fetch_assoc()) {
@@ -79,8 +82,8 @@ while ($row = $result->fetch_assoc()) {
             <td>{$row['Category']}</td>
             <td>{$row['Message']}</td>
             <td>
-                <a href='DeleteReview.php?id={$row['ID']}'>Fshi</a> |
-                <a href='EditReviews.php?id={$row['ID']}'>Përditëso</a>
+                <a href='DeleteContact.php?id={$row['ID']}'>Fshi</a> |
+                <a href='EditContacts.php?id={$row['ID']}'>Përditëso</a>
             </td>
           </tr>";
 }
