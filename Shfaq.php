@@ -5,7 +5,8 @@ $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
 echo "<table border='1' style='width:100%; text-align:left;'>";
-echo "<tr>
+echo "<h2>Users</h2>
+      <tr>
         <th>ID</th>
         <th>Emri</th>
         <th>Mbiemri</th>
@@ -31,13 +32,14 @@ while ($row = $result->fetch_assoc()) {
             </td>
           </tr>";
 }
-echo "</table>";
+echo "</table><br>";
 
 $sql = "SELECT * FROM reviews";
 $result = $conn->query($sql);
 
 echo "<table border='1' style='width:100%; text-align:left;'>";
-echo "<tr>
+echo "<h2>Reviews</h2>
+      <tr>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -59,13 +61,14 @@ while ($row = $result->fetch_assoc()) {
             </td>
           </tr>";
 }
-echo "</table>";
+echo "</table><br>";
 
 $sql = "SELECT * FROM contacts";
 $result = $conn->query($sql);
 
 echo "<table border='1' style='width:100%; text-align:left;'>";
-echo "<tr>
+echo "<h2>Contacts</h2>
+      <tr>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
