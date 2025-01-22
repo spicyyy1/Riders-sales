@@ -93,4 +93,51 @@ while ($row = $result->fetch_assoc()) {
 echo "</table>";
 
 $conn->close();
+
+function addUser($name, $email, $role) {
+  global $conn;
+  $sql = "INSERT INTO users (name, email, role) VALUES (?, ?, ?)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("sss", $name, $email, $role);
+
+  if (empty($name) || empty($email) || empty($role)) {
+      echo "Emri, email-i dhe roli nuk mund të jenë bosh.";
+      return;
+  }
+
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      echo "Email-i nuk është i vlefshëm.";
+      return;
+  }
+
+  if (!in_array($role, ['admin', 'user'])) {
+      echo "Roli duhet të jetë 'admin' ose 'user'.";
+      return;
+  }
+
+  if ($stmt->execute()) {
+      echo "Përdoruesi u shtua me sukses!";
+  } else {
+      echo "Ka ndodhur një gabim: " . $stmt->error;
+  }
+  $stmt->close();
+}
 ?>
+
+<h2>Shto Përdorues</h2>
+<form method="POST" action="Shfaq.php">
+    <input type="text" name="firstname" placeholder="Emri" required>
+    <input type="text" name="lastname" placeholder="Mbiemri" required>
+    <input type="email" name="email" placeholder="Email-i" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="date" name="dateofbirth" placeholder="Date of birth" required>
+    <select name="gender" id="gender" required>
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+    <select name="role" required>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select>
+    <button type="submit" name="add_user">Shto Përdorues</button>
+</form>

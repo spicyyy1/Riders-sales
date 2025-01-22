@@ -32,7 +32,7 @@ if(isset($_GET['id'])){
     Email: <input type="email" name="email" value="<?= $row['Email'] ?>" required><br>
     Password: <input type="password" name="password" value="<?= $row['Password'] ?>" required><br>
     Date of birth: <input type="date" name="dateofbirth" value="<?= $row['Dateofbirth'] ?>" required><br>
-    Gender: <select name="gender" id="gender" value="<?= $row['Dateofbirth'] ?>" required>
+    Gender: <select name="gender" id="gender" value="<?= $row['Gender'] ?>" required>
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select><br>
