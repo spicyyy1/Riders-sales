@@ -6,7 +6,6 @@ function Login($conn, $email, $password) {
     $stmt = $conn->prepare($sql);
     
     if ($stmt === false) {
-        echo "Error preparing the statement: " . $conn->error;
         return false;
     }
 
@@ -15,18 +14,12 @@ function Login($conn, $email, $password) {
 
     $result = $stmt->get_result();
 
-    echo "Rows returned: " . $result->num_rows . "<br>"; 
-    
     if ($result->num_rows == 0) {
-        echo "No user found with this email: " . $email . "<br>";
+        return false;
     }
 
     if ($result->num_rows == 1) {
         $user = $result->fetch_assoc(); 
-
-        echo "<pre>";
-        print_r($user); 
-        echo "</pre>";
 
         if (password_verify($password, $user['Password'])) {
             $_SESSION['user_id'] = $user['ID'];
@@ -36,12 +29,32 @@ function Login($conn, $email, $password) {
 
             return true; 
         } else {
-            echo "Invalid password.<br>";
+            return false; 
         }
-    } else {
-        echo "User not found or multiple users with the same email found.<br>";
     }
 
     return false; 
+}
+
+require 'DatabaseConnection.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (!empty($_POST["username"]) && !empty($_POST["password"])) {
+        $email = $_POST["username"];
+        $password = $_POST["password"];
+
+        $response = Login($conn, $email, $password);
+
+        if ($response) {
+            header("Location: index.php");
+            exit;
+        } else {
+            header("Location: Login.php?error=invalid_credentials");
+            exit;
+        }
+    } else {
+        header("Location: Login.php?error=missing_fields");
+        exit;
+    }
 }
 ?>

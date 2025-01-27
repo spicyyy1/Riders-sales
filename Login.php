@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +39,9 @@
         </form>
 
         <?php
+        include "LoginController.php";
+        include "DatabaseConnection.php";
+
         if (isset($_GET['error'])) {
             if ($_GET['error'] == 'invalid_credentials') {
                 echo "<p style='color:red;'>Invalid email or password. Please try again.</p>";
@@ -42,9 +49,6 @@
                 echo "<p style='color:red;'>Please fill in all fields.</p>";
             }
         }
-
-        echo "Database password: " . $user['Password'];
-echo "Entered password: " . $password;
 ?>
 
         <div class="adminBtn">

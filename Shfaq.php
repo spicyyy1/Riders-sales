@@ -10,7 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["add_user"])) {
     $gender = $_POST["gender"];
     $role = $_POST["role"];
 
-    if (empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($role)) {
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    if (empty($firstname) || empty($lastname) || empty($email) || empty($hashedPassword) || empty($role)) {
         echo "Të gjitha fushat janë të detyrueshme!";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Email-i nuk është i vlefshëm!";
@@ -21,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["add_user"])) {
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
-        $stmt->bind_param("sssssss", $firstname, $lastname, $email, $password, $dateofbirth, $gender, $role);
+        $stmt->bind_param("sssssss", $firstname, $lastname, $email, $hashedPassword, $dateofbirth, $gender, $role);
 
         if ($stmt->execute()) {
             header("Location: " . $_SERVER['PHP_SELF']); 
