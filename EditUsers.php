@@ -9,8 +9,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = $_POST['password'];
     $dateofbirth = $_POST['dateofbirth'];
     $gender = $_POST['gender'];
+    $role = $_POST['role'];
 
-    $sql = "update users set firstname = '$firstname', lastname = '$lastname', email = '$email', password = '$password', dateofbirth = '$dateofbirth', gender = '$gender' where id = $id";
+    $sql = "update users set firstname = '$firstname', lastname = '$lastname', email = '$email', password = '$password', dateofbirth = '$dateofbirth', gender = '$gender', role = '$role' where id = $id";
 
     if(!mysqli_query($conn, $sql)){
         echo " Error: " . mysqli_error($conn);
@@ -36,6 +37,10 @@ if(isset($_GET['id'])){
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select><br>
+    <select name="role" required>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select><br>
     <button type="submit">Perditso Userin</button>
 </form>
 <?php
