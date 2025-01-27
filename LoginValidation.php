@@ -1,19 +1,21 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-require 'DatabaseConnection.php'; 
-require 'LoginController.php'; 
+require_once 'DatabaseConnection.php';
+require_once 'LoginController.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!empty($_POST["username"]) && !empty($_POST["password"])) {
-        $email = $_POST["username"];
-        $password = $_POST["password"];
+        $email = trim($_POST["username"]);
+        $password = trim($_POST["password"]);
         
         $response = Login($conn, $email, $password);
-        
+
         if ($response) {
             header("Location: index.php"); 
-            exit; 
+            exit;
         } else {
             header("Location: Login.php?error=invalid_credentials");
             exit;

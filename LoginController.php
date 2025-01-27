@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 function Login($conn, $email, $password) {
     $sql = "SELECT * FROM users WHERE Email = ?";
@@ -34,27 +36,5 @@ function Login($conn, $email, $password) {
     }
 
     return false; 
-}
-
-require 'DatabaseConnection.php';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if (!empty($_POST["username"]) && !empty($_POST["password"])) {
-        $email = $_POST["username"];
-        $password = $_POST["password"];
-
-        $response = Login($conn, $email, $password);
-
-        if ($response) {
-            header("Location: index.php");
-            exit;
-        } else {
-            header("Location: Login.php?error=invalid_credentials");
-            exit;
-        }
-    } else {
-        header("Location: Login.php?error=missing_fields");
-        exit;
-    }
 }
 ?>

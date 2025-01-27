@@ -1,5 +1,17 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+include_once "LoginController.php";
+
+    if (isset($_GET['error'])) {
+        if ($_GET['error'] == 'invalid_credentials') {
+            echo "<p style='color:red;'>Invalid email or password. Please try again.</p>";
+        } elseif ($_GET['error'] == 'missing_fields') {
+            echo "<p style='color:red;'>Please fill in all fields.</p>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -37,20 +49,6 @@ session_start();
 
             <input type="submit" value="Login" id="loginBtn">
         </form>
-
-        <?php
-        include "LoginController.php";
-        include "DatabaseConnection.php";
-
-        if (isset($_GET['error'])) {
-            if ($_GET['error'] == 'invalid_credentials') {
-                echo "<p style='color:red;'>Invalid email or password. Please try again.</p>";
-            } elseif ($_GET['error'] == 'missing_fields') {
-                echo "<p style='color:red;'>Please fill in all fields.</p>";
-            }
-        }
-?>
-
         <div class="adminBtn">
             <button onclick="window.location='AdminDashboard.php'">Admin</button>
         </div>
