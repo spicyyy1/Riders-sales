@@ -28,6 +28,7 @@ if(!isset($_SESSION["email"])){
         <button onclick="window.location='About.php'">About Us</button>
         <button onclick="window.location='Register.php'">Register</button>
         <button onclick="window.location='Login.php'">Login</button>
+        <button onclick="window.location='logout.php'">Logout</button>
     </div>
 
     <div>
