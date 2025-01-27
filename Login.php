@@ -33,6 +33,20 @@
 
             <input type="submit" value="Login" id="loginBtn">
         </form>
+
+        <?php
+        if (isset($_GET['error'])) {
+            if ($_GET['error'] == 'invalid_credentials') {
+                echo "<p style='color:red;'>Invalid email or password. Please try again.</p>";
+            } elseif ($_GET['error'] == 'missing_fields') {
+                echo "<p style='color:red;'>Please fill in all fields.</p>";
+            }
+        }
+
+        echo "Database password: " . $user['Password'];
+echo "Entered password: " . $password;
+?>
+
         <div class="adminBtn">
             <button onclick="window.location='AdminDashboard.php'">Admin</button>
         </div>

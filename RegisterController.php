@@ -1,20 +1,23 @@
 <?php
 require_once 'DatabaseConnection.php';
 
-    function Register($conn, $user){
-        $firstname = $user['firstname'];
-        $lastname = $user['lastname'];
-        $email = $user['email'];
-        $password = $user['password'];
-        $dateofbirth = $user['dateofbirth'];
-        $gender = $user['gender'];
+function Register($conn, $user){
+    $firstname = $user['firstname'];
+    $lastname = $user['lastname'];
+    $email = $user['email'];
+    $password = $user['password']; 
+    $dateofbirth = $user['dateofbirth'];
+    $gender = $user['gender'];
 
-        $sql = "insert into users (firstname, lastname, email, password, dateofbirth, gender) values ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$gender')";
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        if(mysqli_query($conn, $sql)){
-            return true;
-        } else {
-            return false;
-        }
+    $sql = "INSERT INTO users (firstname, lastname, email, password, dateofbirth, gender) 
+            VALUES ('$firstname', '$lastname', '$email', '$hashedPassword', '$dateofbirth', '$gender')";
+
+    if(mysqli_query($conn, $sql)){
+        return true;
+    } else {
+        return false;
     }
+}
 ?>
