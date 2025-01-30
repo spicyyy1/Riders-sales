@@ -12,6 +12,8 @@ Contact Section: Allows users to get in touch with us or request more informatio
 Tech Stack
 Frontend: HTML5, CSS3, JavaScript.
 
+Backend: PHP, MySQL (phpMyAdmin for database management)
+
 Usage
 Use the navigation bar to browse different sections of the site.
 Explore car services.

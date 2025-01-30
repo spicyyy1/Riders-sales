@@ -1,8 +1,11 @@
 <?php
-session_start();
-echo $_SESSION["email"];
-if(!isset($_SESSION["email"])){
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['user_email'])) {
     header("Location: Login.php");
+    exit;
 }
 ?>
 

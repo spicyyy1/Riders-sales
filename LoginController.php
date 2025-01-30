@@ -11,7 +11,7 @@ function Login($conn, $email, $password) {
     $email = trim($email);
     $password = trim($password);
 
-    if(!filter_var($email, FILTER_VALIDATE_email)){
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         return false;
     }
 
@@ -32,7 +32,9 @@ function Login($conn, $email, $password) {
                 $_SESSION['user_role'] = $user['Role'];
                 $_SESSION['session_id'] = session_id();
                 $_SESSION['last_activity'] = time();
-                return true;
+
+                header("Location: index.php");
+                exit;
             } else {
                 return false;
             }
