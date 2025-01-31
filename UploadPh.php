@@ -28,7 +28,7 @@ if ($_SERVER["Request_Method"] == "POST") {
                     $stmt->bind_param("isss", $user_id, $name, $type, $target_file);
                     if ($stmt->execute()) {
                         echo "Photo uploaded successfully.";
-                    } esle {
+                    } else {
                         echo "ERROR: " . $stmt->error;
                     }
                     $stmt->close();
@@ -36,7 +36,7 @@ if ($_SERVER["Request_Method"] == "POST") {
             } else {
                 echo "Failed to move file.";
             }
-        } esle {
+        } else {
             echo "Invaid file type. Make sure the file is JPEG, PNG, and GIF! ";
         }
     } else {
