@@ -1,6 +1,9 @@
 <?php
 session_start();
-if ($_SERVER["Request_Method"] == "POST") {
+
+include_once "DatabaseConnection.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_SESSION['user_id'])) {
         echo "You must log in to upload a photo.";
         exit;
